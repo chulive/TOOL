@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Tài Xỉu - Check Cầu</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-layer"></div>
+<div class="bg-grid"></div>
+
+<!-- NÚT ZALO ADMIN -->
+<a class="zalo-float" href="https://zalo.me/0776307956" target="_blank" rel="noopener" title="Liên hệ Admin qua Zalo">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.001 2C6.48 2 2 5.86 2 10.62c0 2.72 1.44 5.16 3.7 6.78-.1.8-.4 2.1-1.3 3.6 0 0 2.2-.3 3.9-1.4.9.14 1.83.22 2.7.22 5.52 0 10-3.86 10-8.62S17.52 2 12.001 2zm-4.4 11.86H5.9c-.5 0-.9-.4-.9-.9V9.2c0-.5.4-.9.9-.9h.04c.5 0 .9.4.9.9v2.86h.76c.5 0 .9.4.9.9s-.4.9-.9.9zm2.02-.9c0 .5-.4.9-.9.9s-.9-.4-.9-.9V9.2c0-.5.4-.9.9-.9s.9.4.9.9v3.76zm4.86.9h-.04c-.36 0-.7-.22-.84-.55l-1.36-3.06v2.71c0 .5-.4.9-.9.9s-.9-.4-.9-.9V9.2c0-.5.4-.9.9-.9h.04c.36 0 .7.22.84.55l1.36 3.06V9.2c0-.5.4-.9.9-.9s.9.4.9.9v3.76c0 .5-.4.9-.9.9zm4.52-3.2c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9z"/>
+  </svg>
+  <span class="zalo-tooltip">Liên hệ Admin</span>
+</a>
+
+<div class="container">
+
+  <div class="logo-wrap">
+    <div class="logo-ring">
+      <img id="logoImg" src="" alt="Logo">
+    </div>
+  </div>
+
+  <h1>TOOL TÀI XỈU</h1>
+  <p class="subtitle">CHECK CẦU T/X</p>
+
+  <div class="status-badge">
+    <div class="badge">ONLINE</div>
+    <div class="badge gold">PRO</div>
+  </div>
+
+  <div class="steps">
+    <div class="step-dot active" id="dot1">1</div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-dot" id="dot2">2</div>
+  </div>
+
+  <div class="panel">
+
+    <!-- BƯỚC 1: NHẬP KEY -->
+    <div class="step-content active" id="step1">
+      <div class="step-header">
+        <span class="step-num">BƯỚC 1 / 2</span>
+        <span class="step-title-text">Nhập Key Truy Cập</span>
+      </div>
+
+      <label><span class="label-icon"></span> Key của bạn</label>
+      <div class="input-wrap">
+        <input type="text" id="anKey" placeholder="Chu-XXXX-XXXX" autocomplete="off" spellcheck="false">
+      </div>
+
+      <!-- THÔNG TIN KEY -->
+      <div class="key-info" id="keyInfo"></div>
+
+      <button class="btn" onclick="goStep2()">TIẾP TỤC</button>
+    </div>
+
+    <!-- BƯỚC 2: NHẬP # + CHUỖI -->
+    <div class="step-content" id="step2">
+      <div class="step-header">
+        <span class="step-num">BƯỚC 2 / 2</span>
+        <span class="step-title-text">Nhập Dữ Liệu</span>
+      </div>
+
+      <div class="key-display" id="keyShow"></div>
+
+      <label><span class="label-icon"></span> Mã #</label>
+      <div class="input-wrap" style="margin-bottom:16px">
+        <input type="text" id="anHash" placeholder="#000000" autocomplete="off" spellcheck="false">
+      </div>
+
+      <label><span class="label-icon"></span> Chuỗi Cầu T/X</label>
+      <div class="input-wrap">
+        <textarea id="anPattern" placeholder="TTTT BẺ HAY KO BẺ TXTT CẦU ĐÔI VÀ 1-1 ..." spellcheck="false"></textarea>
+      </div>
+
+      <button class="btn" onclick="analyze()">BẮT ĐẦU CHECK CẦU</button>
+      <button class="btn btn-back" onclick="backStep1()">QUAY LẠI</button>
+    </div>
+
+    <!-- KẾT QUẢ -->
+    <div id="anResult" class="result">
+      <h3>KẾT QUẢ CHECK CẦU</h3>
+      <div id="anVerdict" class="verdict"></div>
+      <div id="anStats"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">POWERED BY <span>TOOL TÀI XỈU</span> • v4.0</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
